@@ -74,7 +74,7 @@ body {
 #motherPlate {
   width: 37.5vw;
   margin-left: 0.5vw;
-  margin-top: 1.9vw;
+  margin-top: -3.9vw;
 }
 
 .items {
@@ -92,25 +92,27 @@ body {
 #microwave {
   width: 41.8vw;
   margin-left: -19.6vw;
-  margin-top: 1.44vw;
+  margin-top: -1.44vw;
 }
 
 #coffeeMachine {
   width: 50vw;
   margin-left: 2vw;
-  margin-top: -21vw;
+  margin-top: -23vw;
 }
 
 #table {
   width: 57vw;
-  margin-left: -12vw;
-  margin-top: -15vw;
+  margin-left: -16vw;
+  margin-top: -18vw;
 }
 
 .scrollArrow {
   display: flex;
   flex-direction: column;
   gap: 1vw;
+  margin-left: -8vw;
+  margin-top: -3vw;
 }
 
 #scroll {
