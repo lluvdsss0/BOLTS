@@ -1,6 +1,6 @@
 /* основные настройки сайта */
 html {
-  background-color: #0f0f0f;
+  background-color: #101010;
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -8,8 +8,26 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  font-family: "SevenExEight_Pixel";
+  font-family: "TTNeoris";
   overflow-x: hidden;
   overflow-y: hidden;
   height: auto;
+}
+
+.mainItems {
+  margin-left: 2.4vw;
+  margin-top: 2.4vw;
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  gap: 2.6vw;
+  padding: 1.2vw 3.36vw;
+  background-color: #fcfcfc;
+}
+
+.section {
+  text-decoration: none;
+  color: #101010;
 }
