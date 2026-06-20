@@ -14,7 +14,10 @@ body {
   height: auto;
 }
 
-.mainItems {
+.mainMenu {
+  display: flex;
+  flex-direction: row;
+  gap: 48.6vw;
   margin-left: 2.4vw;
   margin-top: 2.4vw;
 }
@@ -23,11 +26,99 @@ body {
   display: flex;
   flex-direction: row;
   gap: 2.6vw;
-  padding: 1.2vw 3.36vw;
+  padding: 0.5vw 1.3vw;
   background-color: #fcfcfc;
+  max-width: fit-content;
 }
 
 .section {
   text-decoration: none;
   color: #101010;
+  font-size: 1.1vw;
+}
+
+#indexBold {
+  font-weight: 600;
+}
+
+#shopBold {
+  font-weight: 600;
+}
+
+#eventsBold {
+  font-weight: 600;
+}
+
+#locationBold {
+  font-weight: 600;
+}
+
+#gamesBold {
+  font-weight: 600;
+}
+
+.mainButton {
+  display: flex;
+  white-space: nowrap;
+  color: #101010;
+  font-weight: 400;
+  font-size: 1.1vw;
+  background-color: #fcfcfc;
+  padding: 0.5vw 1.3vw;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#motherPlate {
+  width: 37.5vw;
+  margin-left: 0.5vw;
+  margin-top: 1.9vw;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#runningRoad {
+  width: 46.7vw;
+  margin-left: -10.9vw;
+  margin-top: -6.9vw;
+}
+
+#microwave {
+  width: 41.8vw;
+  margin-left: -19.6vw;
+  margin-top: 1.44vw;
+}
+
+#coffeeMachine {
+  width: 50vw;
+  margin-left: 2vw;
+  margin-top: -21vw;
+}
+
+#table {
+  width: 57vw;
+  margin-left: -12vw;
+  margin-top: -15vw;
+}
+
+.scrollArrow {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+#scroll {
+  font-size: 3vw;
+  font-weight: 600;
+  color: #fcfcfc;
+}
+
+#arrowUnderScroll {
+  height: 3.9vw;
 }

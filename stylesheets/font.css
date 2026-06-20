@@ -1,6 +1,13 @@
 @font-face {
   font-family: "TTNeoris";
-  src: url(../);
+  src: url(../fonts/TT\ Neoris\ Educational\ Regular.ttf);
   font-style: normal;
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "TTNeoris";
+  src: url(../fonts/TT\ Neoris\ Educational\ Bold.ttf);
+  font-style: bold;
+  font-weight: 600;
 }
