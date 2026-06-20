@@ -11,3 +11,10 @@
   font-style: bold;
   font-weight: 600;
 }
+
+@font-face {
+  font-family: "FATResin";
+  src: url(../fonts/FATResin-Regular\ \(2\).otf);
+  font-style: normal;
+  font-weight: 400;
+}

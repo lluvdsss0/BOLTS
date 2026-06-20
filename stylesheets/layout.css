@@ -103,7 +103,7 @@ body {
 
 #table {
   width: 57vw;
-  margin-left: -16vw;
+  margin-left: -17vw;
   margin-top: -18vw;
 }
 
@@ -112,15 +112,53 @@ body {
   flex-direction: column;
   gap: 1vw;
   margin-left: -8vw;
-  margin-top: -3vw;
+  margin-top: -4vw;
 }
 
 #scroll {
-  font-size: 3vw;
+  font-family: "FATResin";
+  font-size: 9vw;
   font-weight: 600;
   color: #fcfcfc;
+  letter-spacing: -2%;
 }
 
 #arrowUnderScroll {
   height: 3.9vw;
+}
+
+#hugeSlotsAndBolts {
+  font-family: "FATResin";
+  color: #fcfcfc;
+  font-size: 37vw;
+  max-width: 56vw;
+  margin-left: 20vw;
+  margin-top: -5vw;
+  letter-spacing: -5%;
+  text-align: center;
+  line-height: 87%;
+}
+
+.cherry {
+  width: 70vw;
+}
+
+#cherryMain1 {
+  position: absolute;
+  left: -16vw;
+  top: 63vw;
+  transform: rotate(131deg);
+}
+
+#cherryMain2 {
+  position: absolute;
+  left: 56vw;
+  top: 53vw;
+  transform: rotate(35deg);
+}
+
+#halftone {
+  display: block;
+  width: 100vw;
+  height: 100vh;
 }
