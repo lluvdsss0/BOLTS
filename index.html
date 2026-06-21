@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets\style.css" />
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
     <title>BOLTS</title>
   </head>
   <body>
@@ -35,14 +35,7 @@
       </div>
       <img id="table" src="svg\mainTable.svg" alt="" />
     </section>
-    <section class="hugeText">
-      <p id="hugeSlotsAndBolts">
-        слоты <br />
-        и болты
-      </p>
-      <img class="cherry" id="cherryMain1" src="svg\mainCherry.svg" alt="" />
-      <img class="cherry" id="cherryMain2" src="svg\mainCherry.svg" alt="" />
-    </section>
+
     <section class="halftone">
       <div class="mainHalftone">
         <canvas id="mainLocation"></canvas>
@@ -52,10 +45,58 @@
         <canvas id="halftone"></canvas>
       </div>
     </section>
-    <section class="posters">
-      <p class="sectionTitle" id="postersTitle">
-        РАСПРОСТРАНЯЕМСЯ В ТАЙНЕ \СКРЫТЬ\
+    <section class="hugeText">
+      <p id="hugeSlotsAndBolts">
+        слоты <br />
+        и болты
       </p>
+      <img class="cherry" id="cherryMain1" src="svg\mainCherry.svg" alt="" />
+      <img class="cherry" id="cherryMain2" src="svg\mainCherry.svg" alt="" />
+    </section>
+    <section class="posters">
+      <!-- <p class="sectionTitle" id="postersTitle">
+        РАСПРОСТРАНЯЕМСЯ В ТАЙНЕ \СКРЫТЬ\
+      </p> -->
+      <video
+        id="oblet"
+        src="svg\oblet.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <div class="videoText" id="videoTitle"></div>
+      <div class="videoText" id="videoTime"></div>
+      <img id="logo" src="svg\logo.svg" alt="" />
+      <!-- <p id="slotsAndBoltsVideo">
+        слоты <br />
+        и болты
+      </p> -->
+    </section>
+    <section>
+      <img id="finalCherry" src="svg\mainCherry.svg" alt="" />
+      <p id="finalTitle">
+        ТЫ МОЖЕШЬ СТАТЬ <br />
+        ЧАСТЬЮ СИСТЕМЫ!
+      </p>
+      <a
+        href="https://lluvdsss0.github.io/Web-poster-slotsandbolts/?utm_source=yandex.ru&utm_medium=referral&utm_content=%2F"
+        id="finalButton"
+        >УЗНАТЬ ЛОКАЦИЮ</a
+      >
+    </section>
+    <section class="footer">
+      <div class="footerUpText">
+        <p class="footerBigText">СВЯЗАТЬСЯ С НАМИ</p>
+        <p class="footerBigText" id="footerTg">TELEGRAM</p>
+      </div>
+      <div id="footerLine"></div>
+      <p id="footerSlots">СЛОТЫ И БОЛТЫ</p>
+      <div class="footerDownText">
+        <p class="footerSmallText">КРУГЛИКОВА КРИСТИНА</p>
+        <p class="footerSmallText" id="footerMiddleDownText">ГРИДНЕВ СЕРГЕЙ</p>
+        <p class="footerSmallText" id="footerEndDownText">БДЗ257</p>
+      </div>
     </section>
   </body>
 </html>

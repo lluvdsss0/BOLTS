@@ -69,6 +69,7 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 
 #motherPlate {
@@ -93,6 +94,7 @@ body {
   width: 41.8vw;
   margin-left: -19.6vw;
   margin-top: -1.44vw;
+  z-index: 1;
 }
 
 #coffeeMachine {
@@ -118,7 +120,7 @@ body {
 #scroll {
   font-family: "FATResin";
   font-size: 9vw;
-  font-weight: 600;
+  font-weight: 400;
   color: #fcfcfc;
   letter-spacing: -2%;
 }
@@ -133,7 +135,7 @@ body {
   font-size: 37vw;
   max-width: 56vw;
   margin-left: 20vw;
-  margin-top: -5vw;
+  margin-top: 6.4vw;
   letter-spacing: -5%;
   text-align: center;
   line-height: 87%;
@@ -146,14 +148,14 @@ body {
 #cherryMain1 {
   position: absolute;
   left: -16vw;
-  top: 63vw;
+  top: 117vw;
   transform: rotate(131deg);
 }
 
 #cherryMain2 {
   position: absolute;
   left: 56vw;
-  top: 53vw;
+  top: 103vw;
   transform: rotate(35deg);
 }
 
@@ -183,13 +185,13 @@ body {
 
 .halftone {
   margin-left: 2.4vw;
-  margin-top: 7.8vw;
+  margin-top: -1.6vw;
 }
 
 #halftoneText {
   font-family: "FATResin";
   font-size: 6.8vw;
-  font-weight: 600;
+  font-weight: 400;
   color: #fcfcfc;
   letter-spacing: -2%;
   margin-top: -0.2vw;
@@ -210,4 +212,226 @@ body {
   margin-top: -0.2vw;
   white-space: nowrap;
   line-height: 85%;
+}
+
+#oblet {
+  width: 100vw;
+  margin-left: -2.4vw;
+  filter: grayscale(100%);
+}
+
+.videoText {
+  font-weight: 400;
+  color: #e8fca3;
+  font-size: 1.7vw;
+  letter-spacing: -5%;
+}
+
+#videoTitle {
+  position: absolute;
+  top: 188.4vw;
+  left: 75.8vw;
+}
+
+#videoTime {
+  position: absolute;
+  top: 239.5vw;
+}
+
+#videoTitle:after {
+  content: "ЛОКАЦИЯ/ЗАСЕКРЕЧЕНО/";
+  animation: videoTitleCrack 1.5s steps(1, end) infinite;
+}
+@keyframes videoTitleCrack {
+  0%,
+  60% {
+    content: "ЛОКАЦИЯ/ЗАСЕКРЕЧЕНО/";
+  }
+  60%,
+  65% {
+    content: "ЛОК$Ц@Я/ЗАС$К**Ч@НО/";
+  }
+  65%,
+  70% {
+    content: "ЛОКАЦИЯ/ЗАСЕКРЕЧЕНО/";
+  }
+  70%,
+  75% {
+    content: "@$@#$@$@#@$@%@$^@$^@^";
+  }
+  75%,
+  80% {
+    content: "ЛО*&Ц*Я/З@СЕ%$!ЕЧЕНО/";
+  }
+  80%,
+  85% {
+    content: "###$@$@^#@#%$%@^$@^%";
+  }
+  85%,
+  90% {
+    content: "ЛО*А~@Я/ЗА*ЕКРЕ%^НО/";
+  }
+  90%,
+  100% {
+    content: "ЛОКАЦИЯ/ЗАСЕКРЕЧЕНО/";
+  }
+}
+
+#videoTime:after {
+  content: "06.06.2126 20:00:12";
+  animation: videoTimeCrack 1.9s steps(1, end) infinite;
+}
+@keyframes videoTimeCrack {
+  0%,
+  60% {
+    content: "06.06.2126 20:00:12";
+  }
+  60%,
+  65% {
+    content: "67.67.6767 67:67:67";
+  }
+  65%,
+  70% {
+    content: "52.16.7172 33:94:32";
+  }
+  70%,
+  75% {
+    content: "01.12.2546 19:03:45";
+  }
+  75%,
+  80% {
+    content: "43.11.4521 34:11:12";
+  }
+  80%,
+  85% {
+    content: "06.06.2126 20:00:23";
+  }
+  85%,
+  90% {
+    content: "12.52.5252 23:876:1";
+  }
+  90%,
+  100% {
+    content: "06.06.2126 20:00:12";
+  }
+}
+
+#logo {
+  width: 45vw;
+  position: absolute;
+  top: 204vw;
+  left: 27vw;
+}
+
+/* #slotsAndBoltsVideo {
+  color: #e8fca3;
+  font-family: "FATResin";
+  font-size: 38vw;
+  position: absolute;
+  top: 187.4vw;
+  left: 24vw;
+  letter-spacing: -9%;
+  text-align: center;
+  line-height: 67%;
+} */
+
+#finalCherry {
+  width: 19vw;
+  margin-left: 41vw;
+  margin-top: 6.4vw;
+}
+
+#finalTitle {
+  color: #fcfcfc;
+  font-family: "FATResin";
+  font-size: 14vw;
+  margin-top: -0.7vw;
+  margin-left: -2vw;
+  letter-spacing: -5%;
+  text-align: center;
+  line-height: 80%;
+}
+
+#finalButton {
+  display: flex;
+  white-space: nowrap;
+  color: #101010;
+  font-weight: 400;
+  font-size: 2.1vw;
+  background-color: #fcfcfc;
+  padding: 0.5vw 1.3vw;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: fit-content;
+  margin-top: 3.4vw;
+  margin-left: 39vw;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 7.7vw;
+  background-color: #1d1d1d;
+  padding: 2.4vw;
+  margin-top: 7.7vw;
+}
+
+.footerUpText {
+  display: flex;
+  flex-direction: row;
+  gap: 68.8vw;
+}
+
+.footerDownText {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.4vw;
+}
+
+.footerBigText {
+  color: #3d3d3d;
+  font-weight: 600;
+  font-size: 1.7vw;
+  letter-spacing: -5%;
+}
+
+#footerLine {
+  width: 100vw;
+  margin-left: -2.4vw;
+  margin-top: 1.2vw;
+  height: 0px;
+  border-top: 2px dashed #3d3d3d;
+  opacity: 30%;
+  gap: 0.53vw;
+}
+
+#footerSlots {
+  content: "СЛОТЫ И БОЛТЫ";
+  color: #3d3d3d;
+  background-color: #1d1d1d;
+  border-radius: 0.9vw;
+  font-size: 1.7vw;
+  font-weight: 600;
+  border: #3d3d3d 0.06vw solid;
+  width: fit-content;
+  padding: 0.8vw 2.3vw;
+  margin-left: 37.6vw;
+  margin-top: -1.6vw;
+  z-index: 3;
+}
+
+.footerSmallText {
+  color: #3d3d3d;
+  font-size: 1.4vw;
+}
+
+#footerMiddleDownText {
+  margin-left: 25.5vw;
+}
+
+#footerEndDownText {
+  margin-left: 36.2vw;
 }

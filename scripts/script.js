@@ -159,3 +159,42 @@ function createHalftoneCanvas(canvasId, imageSrc) {
     createHalftone();
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const firstSections = [
+    document.querySelector(".mainMenu"),
+    document.querySelector(".items")
+  ].filter(Boolean);
+
+  const loopStart = document.createElement("div");
+  loopStart.classList.add("loop-start");
+
+  firstSections.forEach((section) => {
+    const clone = section.cloneNode(true);
+    clone.classList.add("loop-clone");
+    loopStart.appendChild(clone);
+  });
+
+  document.body.appendChild(loopStart);
+
+  let isJumping = false;
+
+  window.addEventListener("scroll", () => {
+    if (isJumping) return;
+
+    const loopStartTop = loopStart.offsetTop;
+
+    if (window.scrollY >= loopStartTop) {
+      isJumping = true;
+
+      window.scrollTo({
+        top: 0,
+        behavior: "auto"
+      });
+
+      requestAnimationFrame(() => {
+        isJumping = false;
+      });
+    }
+  });
+});
