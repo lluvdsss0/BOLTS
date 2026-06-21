@@ -1,34 +1,49 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("halftone");
+  createHalftoneCanvas("mainLocation", "./svg/mainLocationSwag.svg");
+
+  createHalftoneCanvas("halftone", "./svg/swag.png");
+});
+
+function createHalftoneCanvas(canvasId, imageSrc) {
+  const canvas = document.getElementById(canvasId);
+
+  if (!canvas) return;
+
   const ctx = canvas.getContext("2d");
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+
+  resizeCanvas();
 
   const mouse = {
     x: -9999,
-    y: -9999
+    y: -9999,
+    vx: 0,
+    vy: 0,
+    lastX: 0,
+    lastY: 0
   };
 
   const dots = [];
 
   const img = new Image();
+  img.src = imageSrc;
 
   img.onload = () => {
-    console.log("loaded");
-
-    ctx.drawImage(img, 0, 0, 500, 500);
+    createHalftone();
+    animate();
   };
-
-  createHalftone();
-  animate();
 
   img.onerror = () => {
-    console.error("image not found");
+    console.error("Image not found:", imageSrc);
   };
 
-  img.src = "./svg/swag.jpg";
   function createHalftone() {
+    dots.length = 0;
+
     const tempCanvas = document.createElement("canvas");
     const tempCtx = tempCanvas.getContext("2d");
 
@@ -43,36 +58,31 @@ window.addEventListener("DOMContentLoaded", () => {
     tempCanvas.width = w;
     tempCanvas.height = h;
 
-    const pixels = tempCtx.getImageData(
-      0,
-      0,
-      tempCanvas.width,
-      tempCanvas.height
-    ).data;
-
     tempCtx.drawImage(img, 0, 0, w, h);
 
-    const gap = 8;
+    const pixels = tempCtx.getImageData(0, 0, w, h).data;
+
+    const gap = 4;
 
     for (let y = 0; y < h; y += gap) {
       for (let x = 0; x < w; x += gap) {
-        const i = (Math.floor(y) * w + Math.floor(x)) * 4;
+        const i = (y * w + x) * 4;
 
         const r = pixels[i];
         const g = pixels[i + 1];
         const b = pixels[i + 2];
 
         const brightness = (r + g + b) / 3;
+        const radius = ((255 - brightness) / 255) * 2 + 0.2;
 
-        const radius = ((255 - brightness) / 255) * 4 + 0.3;
+        const px = x + (canvas.width - w) / 2;
+        const py = y + (canvas.height - h) / 2;
 
         dots.push({
-          x: x + (canvas.width - w) / 2,
-          y: y + (canvas.height - h) / 2,
-
-          currentX: x + (canvas.width - w) / 2,
-          currentY: y + (canvas.height - h) / 2,
-
+          x: px,
+          y: py,
+          currentX: px,
+          currentY: py,
           radius
         });
       }
@@ -80,8 +90,19 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   canvas.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+    const rect = canvas.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    mouse.vx = x - mouse.lastX;
+    mouse.vy = y - mouse.lastY;
+
+    mouse.lastX = x;
+    mouse.lastY = y;
+
+    mouse.x = x;
+    mouse.y = y;
   });
 
   canvas.addEventListener("mouseleave", () => {
@@ -92,40 +113,49 @@ window.addEventListener("DOMContentLoaded", () => {
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    const speed = Math.hypot(mouse.vx, mouse.vy);
+
     for (const dot of dots) {
       let targetX = dot.x;
       let targetY = dot.y;
 
-      const dx = dot.x - mouse.x;
-      const dy = dot.y - mouse.y;
+      if (speed > 0.5) {
+        const dirX = mouse.vx / speed;
+        const dirY = mouse.vy / speed;
 
-      const dist = Math.hypot(dx, dy);
+        const relX = dot.x - mouse.x;
+        const relY = dot.y - mouse.y;
 
-      const radius = 120;
+        const projection = relX * dirX + relY * dirY;
+        const perpendicular = Math.abs(relX * dirY - relY * dirX);
 
-      if (dist < radius) {
-        const force = (radius - dist) / radius;
+        if (projection > 0 && projection < 100 && perpendicular < 20) {
+          const force = (1 - projection / 100) * (1 - perpendicular / 35);
 
-        targetX = dot.x + (dx / (dist || 1)) * force * 40;
-
-        targetY = dot.y + (dy / (dist || 1)) * force * 40;
+          targetX = dot.x + mouse.vx * force * 4;
+          targetY = dot.y + mouse.vy * force * 4;
+        }
       }
 
-      dot.currentX += (targetX - dot.currentX) * 0.12;
-
-      dot.currentY += (targetY - dot.currentY) * 0.12;
+      dot.currentX += (targetX - dot.currentX) * 0.18;
+      dot.currentY += (targetY - dot.currentY) * 0.18;
 
       ctx.beginPath();
       ctx.arc(dot.currentX, dot.currentY, dot.radius, 0, Math.PI * 2);
 
-      ctx.fillStyle = "#000";
+      ctx.fillStyle = "#fff";
       ctx.fill();
     }
+
+    mouse.vx *= 0.85;
+    mouse.vy *= 0.85;
 
     requestAnimationFrame(animate);
   }
 
   window.addEventListener("resize", () => {
-    location.reload();
+    resizeCanvas();
+    dots.length = 0;
+    createHalftone();
   });
-});
+}
