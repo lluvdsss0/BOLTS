@@ -403,7 +403,7 @@ body {
   margin-left: -2.4vw;
   margin-top: 1.2vw;
   height: 0px;
-  border-top: 2px dashed #3d3d3d;
+  border-top: 0.1vw dashed #3d3d3d;
   opacity: 30%;
   gap: 0.53vw;
 }
@@ -434,4 +434,258 @@ body {
 
 #footerEndDownText {
   margin-left: 36.2vw;
+}
+
+.sections {
+  z-index: 10;
+}
+
+.posters {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2vw;
+  margin-left: 2.4vw;
+  margin-top: 6vw;
+}
+
+.poster {
+  width: 10vw;
+  height: 14vw;
+}
+
+.posterBig {
+  width: 21vw;
+}
+
+#footerEvents {
+  margin-top: 6.6vw;
+}
+
+.posterInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.posterInfoTitle {
+  font-family: "FATResin";
+  font-size: 6.8vw;
+  font-weight: 400;
+  color: #fcfcfc;
+  letter-spacing: -2%;
+  margin-top: -0.2vw;
+  white-space: nowrap;
+  line-height: 85%;
+}
+
+.posterInfoText {
+  color: #fcfcfc;
+  font-weight: 400;
+  font-size: 1.1vw;
+  letter-spacing: 0%;
+  line-height: 100%;
+  margin-top: 1.5vw;
+}
+
+.posterInfoDate {
+  font-family: "FATResin";
+  font-size: 6.8vw;
+  font-weight: 400;
+  color: #fcfcfc;
+  letter-spacing: -2%;
+  margin-top: -0.2vw;
+  white-space: nowrap;
+  line-height: 85%;
+  margin-top: 10.4vw;
+}
+
+.posterInfoButton {
+  display: flex;
+  white-space: nowrap;
+  color: #fcfcfc;
+  font-weight: 400;
+  font-size: 1.1vw;
+  border: #fcfcfc dashed 0.1vw;
+  padding: 0.5vw 1.3vw;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  margin-top: 1.2vw;
+}
+
+.posterInfoButton:hover {
+  border: #e8fca3 solid 0.1vw;
+  background-color: #e8fca3;
+  color: #101010;
+}
+.postersMain {
+  width: 100vw;
+  height: 35vw;
+  overflow: hidden;
+}
+
+.postersMain .posters {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.8vw;
+  margin-left: 2.4vw;
+  margin-top: 6vw;
+  width: max-content;
+  transform: none !important;
+}
+
+.postersMain .poster {
+  width: 10vw;
+  height: 14vw;
+  object-fit: cover;
+  flex-shrink: 0;
+  cursor: pointer;
+  opacity: 0.55;
+  transition:
+    width 0.45s ease,
+    height 0.45s ease,
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.postersMain .poster.is-active {
+  width: 21vw;
+  height: 29.4vw;
+  opacity: 1;
+}
+
+.postersMain .posterInfo {
+  position: static !important;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 34vw;
+  margin-left: 0.6vw;
+  margin-top: 0;
+  z-index: 3;
+  background-color: #101010;
+}
+
+.postersMain .poster img,
+.postersMain .posterBig img {
+  width: 21vw;
+  height: 29.4vw;
+  opacity: 1;
+  z-index: 5;
+  object-fit: cover;
+  display: block;
+}
+
+.postersMain .poster.is-active,
+.postersMain .posterBig.is-active {
+  width: 21vw;
+  height: 29.4vw;
+  opacity: 1;
+  z-index: 5;
+}
+
+.posterInfo.is-text-flying {
+  animation: textFlyFromPoster 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.posterInfo.is-text-flying .posterInfoTitle {
+  animation: titleCrackIn 0.55s steps(2, end);
+}
+
+.posterInfo.is-text-flying .posterInfoText,
+.posterInfo.is-text-flying .posterInfoDate,
+.posterInfo.is-text-flying .posterInfoButton {
+  animation: smallTextFlyIn 0.55s ease;
+}
+
+@keyframes textFlyFromPoster {
+  0% {
+    transform: translateX(-7vw);
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes smallTextFlyIn {
+  0% {
+    transform: translateX(-2vw);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes titleCrackIn {
+  0% {
+    transform: translateX(-4vw);
+    opacity: 0;
+    filter: blur(0.2vw);
+  }
+
+  50% {
+    transform: translateX(0.6vw);
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.posters.is-row-moving-next {
+  animation: rowMoveNext 0.55s ease;
+}
+
+.posters.is-row-moving-prev {
+  animation: rowMovePrev 0.55s ease;
+}
+
+@keyframes rowMoveNext {
+  0% {
+    filter: blur(0.08vw);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+
+@keyframes rowMovePrev {
+  0% {
+    filter: blur(0.08vw);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+.postersMain .posters {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.8vw;
+  margin-left: 2.4vw;
+  margin-top: 6vw;
+  width: max-content;
+  height: 29.4vw;
+  transform: none !important;
+}
+
+.postersMain .poster.is-bottom {
+  align-self: flex-end;
 }
