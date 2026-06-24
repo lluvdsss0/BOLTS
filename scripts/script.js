@@ -198,3 +198,124 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = ["svg/clever.png", "svg/mainCherry.svg"];
+
+  let currentImageIndex = 0;
+  let lastChangeTime = 0;
+  const changeDelay = 450;
+  // чем больше число, тем реже меняется картинка
+
+  const cursorImage = document.createElement("img");
+  cursorImage.classList.add("cursorImage");
+  cursorImage.src = images[currentImageIndex];
+  document.body.appendChild(cursorImage);
+
+  document.addEventListener("mousemove", (e) => {
+    cursorImage.style.opacity = "1";
+
+    cursorImage.style.transform = `
+      translate(${e.clientX}px, ${e.clientY}px)
+      translate(-50%, -50%)
+    `;
+
+    const now = Date.now();
+
+    if (now - lastChangeTime > changeDelay) {
+      currentImageIndex++;
+
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      }
+
+      cursorImage.src = images[currentImageIndex];
+      lastChangeTime = now;
+    }
+  });
+
+  document.addEventListener("mouseleave", () => {
+    cursorImage.style.opacity = "0";
+  });
+});
+
+const cherries = document.querySelectorAll(".cherry");
+
+function moveCherries() {
+  cherries.forEach((cherry, index) => {
+    const rect = cherry.getBoundingClientRect();
+    const windowCenter = window.innerHeight / 2;
+    const cherryCenter = rect.top + rect.height / 2;
+
+    const distance = windowCenter - cherryCenter;
+
+    const speeds = [0.12, 0.2, 0.16];
+    const speed = speeds[index] || 0.15;
+
+    const move = distance * speed;
+
+    cherry.style.setProperty("--cherryMove", `${move}px`);
+  });
+
+  requestAnimationFrame(moveCherries);
+}
+
+moveCherries();
+
+const orderOverlay = document.querySelector("#orderOverlay");
+const orderClose = document.querySelector("#orderClose");
+const orderForm = document.querySelector("#orderForm");
+const cardNumberInput = document.querySelector("#cardNumber");
+
+if (orderOverlay && orderClose && orderForm && cardNumberInput) {
+  orderClose.addEventListener("click", closeOrderModal);
+
+  orderOverlay.addEventListener("click", (event) => {
+    if (event.target === orderOverlay) {
+      closeOrderModal();
+    }
+  });
+
+  cardNumberInput.addEventListener("input", () => {
+    let value = cardNumberInput.value.replace(/\D/g, "");
+    value = value.slice(0, 16);
+    cardNumberInput.value = value.replace(/(.{4})/g, "$1 ").trim();
+  });
+
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    alert("Заявка отправлена!");
+    orderForm.reset();
+    closeOrderModal();
+  });
+}
+window.addEventListener("load", () => {
+  const cherries = [
+    {
+      el: document.querySelector("#cherryMain1"),
+      speed: 0.24
+    },
+    {
+      el: document.querySelector("#cherryMain2"),
+      speed: 0.28
+    }
+  ].filter((item) => item.el);
+
+  cherries.forEach((item) => {
+    item.startTop = parseFloat(getComputedStyle(item.el).top);
+  });
+
+  function moveCherries() {
+    const scrollY = window.scrollY;
+
+    cherries.forEach((item) => {
+      item.el.style.top = `${item.startTop - scrollY * item.speed}px`;
+    });
+  }
+
+  window.addEventListener("scroll", moveCherries, {
+    passive: true
+  });
+
+  moveCherries();
+});

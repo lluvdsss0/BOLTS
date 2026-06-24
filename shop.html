@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="scripts/shop.js" defer></script>
     <title>SHOP</title>
   </head>
   <body>
@@ -13,8 +14,91 @@
         <a class="section" id="shopBold" href="shop.html">МЕРЧ</a>
         <a class="section" href="location.html">ЛОКАЦИЯ</a>
         <a class="section" href="events.html">СОБЫТИЯ</a>
-        <a class="section" href="games.html">ИГРЫ</a>
       </div>
     </section>
+    <section>
+      <div class="ruletkaWrapper">
+        <div class="ruletka">
+          <div class="buy">
+            <img id="notebook" src="svg\notebook.svg" alt="" />
+            <div class="buyText" id="buyNotebook">
+              <p class="buyTitle">блокнот</p>
+              <p class="buyPrice">600₽</p>
+            </div>
+            <p class="buyButton" id="buyButtonNotebook">КУПИТЬ</p>
+          </div>
+          <div class="buy">
+            <img id="avtomat" src="svg\avtomat.svg" alt="" />
+            <div class="buyText" id="buyAvtomat">
+              <p class="buyTitle">игровой автомат</p>
+              <p class="buyPrice">26000₽</p>
+            </div>
+            <p class="buyButton" id="buyButtonAvtomat">КУПИТЬ</p>
+          </div>
+          <div class="buy">
+            <img id="kanistra" src="svg\kanistra.svg" alt="" />
+            <div class="buyText" id="buyKanistra">
+              <p class="buyTitle">бензиновый коктейль</p>
+              <p class="buyPrice">2000₽</p>
+            </div>
+            <p class="buyButton" id="buyButtonKanistra">КУПИТЬ</p>
+          </div>
+          <div class="buy">
+            <img id="bag" src="svg\bag.svg" alt="" />
+            <div class="buyText" id="buyBag">
+              <p class="buyTitle">болты</p>
+              <p class="buyPrice">бесплатно</p>
+            </div>
+            <p class="buyButton" id="buyButtonBag">КУПИТЬ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="footer" id="shopFooter">
+      <div class="footerUpText">
+        <p class="footerBigText">СВЯЗАТЬСЯ С НАМИ</p>
+        <p class="footerBigText" id="footerTg">TELEGRAM</p>
+      </div>
+      <div id="footerLine"></div>
+      <p id="footerSlots">СЛОТЫ И БОЛТЫ</p>
+      <div class="footerDownText">
+        <p class="footerSmallText">КРУГЛИКОВА КРИСТИНА</p>
+        <p class="footerSmallText" id="footerMiddleDownText">ГРИДНЕВ СЕРГЕЙ</p>
+        <p class="footerSmallText" id="footerEndDownText">БДЗ257</p>
+      </div>
+    </section>
+    <div class="orderOverlay" id="orderOverlay">
+      <div class="orderModal">
+        <button class="orderClose" id="orderClose" type="button">×</button>
+        <p class="orderTitle">ЗАЯВКА НА ПОКУПКУ</p>
+        <p class="orderProduct" id="orderProduct">товар</p>
+        <form class="orderForm" id="orderForm">
+          <input
+            class="orderInput"
+            id="deviceNumber"
+            type="text"
+            placeholder="Уникальный номер устройства"
+            required
+          />
+          <input
+            class="orderInput"
+            id="cardNumber"
+            type="text"
+            inputmode="numeric"
+            placeholder="Номер карты"
+            maxlength="19"
+            required
+          />
+          <input
+            class="orderInput"
+            id="deliveryAddress"
+            type="text"
+            placeholder="Адрес доставки"
+            required
+          />
+          <button class="orderSubmit" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

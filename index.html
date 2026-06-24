@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets\style.css" />
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="scripts/script.js" defer></script>
     <title>BOLTS</title>
   </head>
@@ -14,7 +15,6 @@
         <a class="section" href="shop.html">МЕРЧ</a>
         <a class="section" href="location.html">ЛОКАЦИЯ</a>
         <a class="section" href="events.html">СОБЫТИЯ</a>
-        <a class="section" href="games.html">ИГРЫ</a>
       </div>
       <div class="mainButtonBg">
         <a
@@ -34,6 +34,58 @@
         <img id="arrowUnderScroll" src="svg\mainArrowUnderScroll.svg" alt="" />
       </div>
       <img id="table" src="svg\mainTable.svg" alt="" />
+      <div class="infoPoint" id="pointPlate">
+        <div class="pointCircle">1</div>
+        <div class="pointLine"></div>
+        <div class="pointCard">
+          <p class="pointTitle">ПЛАТА</p>
+          <p class="pointText">
+            Первый объект системы, который запускает бытовой хаос
+          </p>
+        </div>
+      </div>
+
+      <div class="infoPoint" id="pointRoad">
+        <div class="pointCircle">2</div>
+        <div class="pointLine"></div>
+        <div class="pointCard">
+          <p class="pointTitle">ДОРОЖКА</p>
+          <p class="pointText">
+            ускоряет движение и добавляет системе напряжение
+          </p>
+        </div>
+      </div>
+
+      <div class="infoPoint" id="pointMicrowave">
+        <div class="pointCircle">3</div>
+        <div class="pointLine"></div>
+        <div class="pointCard">
+          <p class="pointTitle">МИКРОВОЛНОВКА</p>
+          <p class="pointText">Разогревает механизм перед началом игры</p>
+        </div>
+      </div>
+
+      <div class="infoPoint pointLeft" id="pointCoffee">
+        <div class="pointCircle">4</div>
+        <div class="pointLine"></div>
+        <div class="pointCard">
+          <p class="pointTitle">КОФЕМАШИНА</p>
+          <p class="pointText">
+            Выдаёт топливо для игроков и запускает режим бодрости
+          </p>
+        </div>
+      </div>
+
+      <div class="infoPoint" id="pointTable">
+        <div class="pointCircle">5</div>
+        <div class="pointLine"></div>
+        <div class="pointCard">
+          <p class="pointTitle">СТОЛ</p>
+          <p class="pointText">
+            Главная поверхность системы, где собираются детали и начинается игра
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="halftone">
@@ -68,10 +120,11 @@
       <div class="videoText" id="videoTitle"></div>
       <div class="videoText" id="videoTime"></div>
       <img id="logo" src="svg\logo.svg" alt="" />
-      <!-- <p id="slotsAndBoltsVideo">
+      <p id="slotsAndBoltsVideo">
         слоты <br />
         и болты
-      </p> -->
+      </p>
+      <img id="logoOld" src="svg\logoOld.svg" alt="" />
     </section>
     <section>
       <img id="finalCherry" src="svg\mainCherry.svg" alt="" />

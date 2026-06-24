@@ -10,14 +10,14 @@ body {
   position: relative;
   font-family: "TTNeoris";
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: auto;
 }
 
 .mainMenu {
   display: flex;
   flex-direction: row;
-  gap: 48.6vw;
+  gap: 52.9vw;
   margin-left: 2.4vw;
   margin-top: 2.4vw;
 }
@@ -123,6 +123,11 @@ body {
   font-weight: 400;
   color: #fcfcfc;
   letter-spacing: -2%;
+  z-index: 10;
+}
+
+#scroll:hover {
+  color: #e8fca3;
 }
 
 #arrowUnderScroll {
@@ -148,14 +153,14 @@ body {
 #cherryMain1 {
   position: absolute;
   left: -16vw;
-  top: 117vw;
+  top: 143vw;
   transform: rotate(131deg);
 }
 
 #cherryMain2 {
   position: absolute;
   left: 56vw;
-  top: 103vw;
+  top: 129vw;
   transform: rotate(35deg);
 }
 
@@ -221,7 +226,7 @@ body {
 }
 
 .videoText {
-  font-weight: 400;
+  font-weight: 600;
   color: #e8fca3;
   font-size: 1.7vw;
   letter-spacing: -5%;
@@ -229,13 +234,13 @@ body {
 
 #videoTitle {
   position: absolute;
-  top: 188.4vw;
+  top: 186.8vw;
   left: 75.8vw;
 }
 
 #videoTime {
   position: absolute;
-  top: 239.5vw;
+  top: 237.5vw;
 }
 
 #videoTitle:after {
@@ -321,19 +326,63 @@ body {
   position: absolute;
   top: 204vw;
   left: 27vw;
+  opacity: 0;
+  animation: threeElementsChange 1.2s infinite steps(1);
+  animation-delay: 0s;
 }
 
-/* #slotsAndBoltsVideo {
+#logoOld {
+  width: 75vw;
+  position: absolute;
+  top: 188vw;
+  left: 11vw;
+  opacity: 0;
+  animation: threeElementsChange 1.2s infinite steps(1);
+  animation-delay: 0.4s;
+}
+
+#slotsAndBoltsVideo {
+  position: absolute;
   color: #e8fca3;
   font-family: "FATResin";
-  font-size: 38vw;
+  font-size: 28vw;
   position: absolute;
-  top: 187.4vw;
-  left: 24vw;
+  top: 194vw;
+  left: 30vw;
   letter-spacing: -9%;
   text-align: center;
   line-height: 67%;
-} */
+  opacity: 0;
+  animation: threeElementsChange 1.2s infinite steps(1);
+  animation-delay: 0.8s;
+}
+
+@keyframes threeElementsChange {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  5% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  28% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  33% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
 
 #finalCherry {
   width: 19vw;
@@ -367,6 +416,11 @@ body {
   max-width: fit-content;
   margin-top: 3.4vw;
   margin-left: 39vw;
+}
+
+#finalButton:hover {
+  background-color: #e8fca3;
+  color: #101010;
 }
 
 .footer {
@@ -688,4 +742,1043 @@ body {
 
 .postersMain .poster.is-bottom {
   align-self: flex-end;
+}
+
+.locationScheme {
+  margin-left: 2.4vw;
+  margin-top: 2.4vw;
+  display: flex;
+  flex-direction: row;
+}
+
+#locationFooter {
+  margin-top: 2.55vw;
+}
+
+.cursorImage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12vw;
+  height: 12vw;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(0.96);
+  opacity: 0;
+  transition:
+    opacity 0.35s ease,
+    transform 0.25s ease;
+  will-change: left, top, opacity, transform;
+}
+
+.cursorImage.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cursorImage.hidden {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+.locationInfo {
+  position: relative;
+  width: 26vw;
+  height: 28vw;
+  border: #fcfcfc dashed 0.1vw;
+  margin-left: 15.6vw;
+  margin-top: 4.2vw;
+}
+
+#locationInfoTitle {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+}
+
+#locationInfoText {
+  position: absolute;
+  top: 6.5vw;
+  left: 2vw;
+}
+
+#scheme {
+  width: 53.27vw;
+}
+
+.locationInfoImage {
+  position: absolute;
+  width: 26vw;
+  top: 13.36vw;
+}
+
+.greenScheme {
+  position: absolute;
+  opacity: 0;
+}
+
+.greenScheme:hover {
+  opacity: 100;
+}
+
+#greenMain {
+  width: 11.7vw;
+  left: 19.87vw;
+  top: 12.17vw;
+}
+
+.locationScheme {
+  position: relative;
+  width: fit-content;
+}
+
+#scheme {
+  width: 53.27vw;
+  display: block;
+}
+
+.schemePoint {
+  position: absolute;
+  cursor: pointer;
+}
+
+#greenSchemeTVs {
+  opacity: 1;
+}
+
+.greenScheme {
+  width: 100%;
+  opacity: 0;
+}
+
+.schemePoint:hover .greenScheme {
+  opacity: 1;
+}
+
+.schemeInfo {
+  position: absolute;
+  left: 85%;
+  top: 20%;
+  width: 24vw;
+  height: 12vw;
+  pointer-events: none;
+}
+
+.schemeLine {
+  position: absolute;
+  background-color: #fcfcfc;
+  opacity: 0;
+}
+
+#mainLineFirst {
+  left: 1.5vw;
+  top: 2.5vw;
+  width: 0;
+  height: 0.15vw;
+}
+
+#mainLineSecond {
+  left: 8.5vw;
+  top: 2.5vw;
+  width: 0.15vw;
+  height: 0;
+}
+
+.photoBox {
+  position: absolute;
+  left: 7vw;
+  top: 6vw;
+  width: 16vw;
+  aspect-ratio: 16 / 9;
+  border: 0.1vw dashed #fcfcfc;
+  background-color: #101010;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+/* hover-анимация */
+.schemePoint:hover #mainLineFirst {
+  animation: lineFirstAnim 0.1s ease forwards;
+}
+
+.schemePoint:hover #mainLineSecond {
+  animation: lineSecondAnim 0.1s ease forwards;
+  animation-delay: 0.05s;
+}
+
+.schemePoint:hover .photoBox {
+  animation: photoBoxAnim 0.2s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.photoSlider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.photoSlider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: photoChange 1.6s infinite;
+  animation-play-state: paused;
+}
+
+.schemePoint:hover .photoSlider img {
+  animation-play-state: running;
+}
+
+.photoSlider img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.photoSlider img:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.photoSlider img:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.photoSlider img:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+@keyframes lineFirstAnim {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 7vw;
+    opacity: 1;
+  }
+}
+
+@keyframes lineSecondAnim {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+
+  to {
+    height: 3.5vw;
+    opacity: 1;
+  }
+}
+
+@keyframes photoBoxAnim {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes photoChange {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#greenTVs {
+  position: absolute;
+  width: 4.8vw;
+  left: 48.44vw;
+  top: 18.26vw;
+  cursor: pointer;
+}
+
+#greenSchemeTVs {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#greenTVs:hover #greenSchemeTVs {
+  opacity: 1;
+}
+
+#TVsLineFirst {
+  position: absolute;
+  left: 0;
+  top: 2vw;
+  width: 3vw;
+  height: 0.15vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 0.15s ease,
+    opacity 0s;
+}
+
+#TVsLineSecond {
+  position: absolute;
+  left: 2.9vw;
+  top: 2vw;
+  width: 0.15vw;
+  height: 4vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: rotate(-28deg) scaleY(0);
+  transform-origin: top center;
+  transition:
+    transform 0.15s ease 0.1s,
+    opacity 0s;
+}
+
+#greenTVs:hover #TVsLineFirst {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#greenTVs:hover #TVsLineSecond {
+  opacity: 1;
+  transform: rotate(-28deg) scaleY(1);
+}
+
+#photoBoxTVs {
+  left: -3vw;
+  top: 5vw;
+}
+
+#greenProvods {
+  position: absolute;
+  width: 6.85vw;
+  left: 2.8vw;
+  top: 7.9vw;
+  cursor: pointer;
+}
+
+#greenSchemeProvods {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#greenProvods:hover #greenSchemeProvods {
+  opacity: 1;
+}
+
+#greenProvods .schemeInfo {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 20vw;
+  height: 12vw;
+  pointer-events: none;
+}
+
+#provodsLineFirst {
+  position: absolute;
+  left: 0;
+  top: 2vw;
+  width: 3vw;
+  height: 0.15vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 0.15s ease,
+    opacity 0s;
+}
+
+#provodsLineSecond {
+  position: absolute;
+  left: 2.9vw;
+  top: 2vw;
+  width: 0.15vw;
+  height: 4vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: rotate(-28deg) scaleY(0);
+  transform-origin: top center;
+  transition:
+    transform 0.15s ease 0.1s,
+    opacity 0s;
+}
+
+#greenProvods:hover #provodsLineFirst {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#greenProvods:hover #provodsLineSecond {
+  opacity: 1;
+  transform: rotate(-28deg) scaleY(1);
+}
+
+#photoBoxProvods {
+  position: absolute;
+  left: -3vw;
+  top: 5vw;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.25s ease 0.25s,
+    transform 0s;
+}
+
+#greenProvods:hover #photoBoxProvods {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#greenTonnels {
+  position: absolute;
+  width: 3.54vw;
+  left: 25.9vw;
+  top: 0vw;
+  cursor: pointer;
+}
+
+#greenSchemeTonnels {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#greenTonnels:hover #greenSchemeTonnels {
+  opacity: 1;
+}
+
+#greenTonnels .schemeInfo {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 20vw;
+  height: 12vw;
+  pointer-events: none;
+}
+
+#tonnelsLineFirst {
+  position: absolute;
+  left: 0;
+  top: 2vw;
+  width: 3vw;
+  height: 0.15vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition:
+    transform 0.15s ease,
+    opacity 0s;
+}
+
+#tonnelsLineSecond {
+  position: absolute;
+  left: 2.9vw;
+  top: 2vw;
+  width: 0.15vw;
+  height: 4vw;
+  background-color: #fcfcfc;
+  opacity: 0;
+  transform: rotate(-28deg) scaleY(0);
+  transform-origin: top center;
+  transition:
+    transform 0.15s ease 0.1s,
+    opacity 0s;
+}
+
+#greenTonnels:hover #tonnelsLineFirst {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+#greenTonnels:hover #tonnelsLineSecond {
+  opacity: 1;
+  transform: rotate(-28deg) scaleY(1);
+}
+
+#photoBoxTonnels {
+  position: absolute;
+  left: -1vw;
+  top: 5vw;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.25s ease 0.25s,
+    transform 0s;
+}
+
+#greenTonnels:hover #photoBoxTonnels {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#greenMain.active .greenScheme,
+#greenTVs.active #greenSchemeTVs,
+#greenProvods.active #greenSchemeProvods,
+#greenTonnels.active #greenSchemeTonnels {
+  opacity: 1;
+}
+
+#mainButtonLocation {
+  margin-left: 1vw;
+}
+
+#mainButtonEvents {
+  margin-left: 1vw;
+}
+
+.ruletka {
+  width: 108vw;
+  height: 28vw;
+  display: flex;
+  flex-direction: row;
+  background-image: url(../svg/ruletka.svg);
+  background-size: contain;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: max-content;
+  overflow: visible;
+  background-repeat: repeat-x;
+  margin-top: 6vw;
+}
+
+.ruletka {
+  animation: ruletkaMove 14s linear infinite;
+  will-change: transform;
+  background-position: var(--bg-x, 0vw) center;
+}
+
+.ruletka > * {
+  flex: 0 0 auto;
+}
+
+#notebook {
+  width: 27vw;
+}
+
+#avtomat {
+  width: 12.7vw;
+}
+
+#kanistra {
+  width: 17.7vw;
+}
+
+#bag {
+  width: 32vw;
+}
+
+#buy {
+  display: flex;
+  flex-direction: column;
+}
+
+.buyText {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: max-content;
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.buyTitle {
+  font-family: "FATResin";
+  font-size: 3.5vw;
+  font-weight: 400;
+  color: #fcfcfc;
+  letter-spacing: -2%;
+  margin-top: -0.2vw;
+  white-space: nowrap;
+  line-height: 85%;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: max-content;
+  margin: 0;
+}
+
+.buyPrice {
+  font-family: "FATResin";
+  font-size: 3.5vw;
+  font-weight: 400;
+  color: #e8fca3;
+  letter-spacing: -2%;
+  margin-top: -0.2vw;
+  white-space: nowrap;
+  line-height: 85%;
+  padding-right: 1.2vw;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  width: max-content;
+  min-width: max-content;
+  margin: 0;
+}
+
+#notebook {
+  margin-left: -1.5vw;
+}
+
+#notebook:hover {
+  transform: scale(170%);
+}
+
+#buyNotebook {
+  margin-left: 1.2vw;
+  gap: 15.1vw;
+  margin-top: 1.3vw;
+}
+
+.buyButton {
+  display: flex;
+  white-space: nowrap;
+  color: #fcfcfc;
+  font-weight: 400;
+  font-size: 1.1vw;
+  padding: 0.5vw 1.5vw;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  border: #747474 dashed 0.1vw;
+  margin-left: 0vw;
+  margin-top: 1.2vw;
+  width: max-content;
+  min-width: max-content;
+  flex: 0 0 auto;
+  padding: 0.5vw 11.3vw;
+}
+
+.buyButton:hover {
+  border: #e8fca3 solid 0.1vw;
+  background-color: #e8fca3;
+  color: #101010;
+}
+
+.buy {
+  width: 27vw;
+  flex-wrap: nowrap;
+  overflow: visible;
+  gap: 0;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.ruletkaWrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.ruletkaWrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.ruletka .buy {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: max-content;
+  min-width: max-content;
+  overflow: visible;
+}
+
+.ruletka .buy img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+#buyAvtomat {
+  margin-top: 1.38vw;
+  margin-left: 1.2vw;
+  gap: 6.7vw;
+}
+
+#buyKanistra {
+  margin-top: 2.4vw;
+  margin-left: 1.2vw;
+  gap: 3.8vw;
+}
+
+#buyBag {
+  margin-top: 0.1vw;
+  margin-left: 1.2vw;
+  gap: 12.3vw;
+}
+
+#bag {
+  margin-top: -2.5vw;
+  margin-left: -2vw;
+}
+
+#bag:hover {
+  transform: scale(170%);
+}
+
+#avtomat {
+  margin-left: 7.2vw;
+  margin-top: 1.2vw;
+}
+
+#kanistra {
+  margin-top: 1.5vw;
+  margin-left: 4.2vw;
+}
+
+#kanistra:hover {
+  transform: scale(170%);
+}
+
+#avtomat:hover {
+  transform: scale(170%);
+}
+
+.ruletkaWrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.ruletka:hover {
+  animation-play-state: paused;
+}
+@keyframes ruletkaMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ruletkaGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: max-content;
+  min-width: max-content;
+  flex: 0 0 auto;
+}
+
+.ruletkaGroupClone {
+  margin-left: -3.2vw !important;
+}
+
+@keyframes ruletkaMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% + 1.6vw));
+  }
+}
+
+.buyButton {
+  cursor: pointer;
+}
+
+.orderOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+}
+
+.orderOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.orderModal {
+  position: relative;
+  width: 38vw;
+  min-width: 320px;
+  background-color: #101010;
+  border: 0.12vw dashed #747474;
+  padding: 2vw;
+  transform: translateY(2vw) scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.orderOverlay.active .orderModal {
+  transform: translateY(0) scale(1);
+}
+
+.orderClose {
+  position: absolute;
+  right: 1vw;
+  top: 0.7vw;
+  background: none;
+  border: none;
+  color: #fcfcfc;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.orderTitle {
+  font-family: "FATResin";
+  font-size: 3vw;
+  line-height: 85%;
+  color: #e8fca3;
+  margin: 0 0 0.8vw 0;
+}
+
+.orderProduct {
+  font-family: "FATResin";
+  font-size: 1.8vw;
+  color: #fcfcfc;
+  margin: 0 0 2vw 0;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.orderInput {
+  width: 100%;
+  background-color: transparent;
+  border: 0.1vw dashed #747474;
+  color: #fcfcfc;
+  font-size: 1.1vw;
+  padding: 0.8vw 1vw;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.orderInput::placeholder {
+  color: #747474;
+}
+
+.orderInput:focus {
+  border-color: #e8fca3;
+}
+
+.orderSubmit {
+  margin-top: 1vw;
+  background-color: #e8fca3;
+  border: none;
+  color: #101010;
+  font-weight: 400;
+  font-size: 1.1vw;
+  padding: 0.9vw 1vw;
+  cursor: pointer;
+}
+
+body.modalOpen {
+  overflow: hidden;
+}
+
+.scrollReveal {
+  opacity: 0;
+  transform: translateY(4vw);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.scrollReveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#motherPlate,
+#runningRoad,
+#microwave,
+#coffeeMachine,
+#table {
+  cursor: pointer;
+  transform-origin: center;
+}
+
+#motherPlate:hover,
+#runningRoad:hover,
+#microwave:hover,
+#coffeeMachine:hover,
+#table:hover {
+  animation: itemShake 0.16s infinite linear;
+}
+
+@keyframes itemShake {
+  0% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+
+  25% {
+    translate: -0.12vw 0.08vw;
+    rotate: -1deg;
+  }
+
+  50% {
+    translate: 0.12vw -0.08vw;
+    rotate: 1deg;
+  }
+
+  75% {
+    translate: -0.08vw -0.12vw;
+    rotate: -0.8deg;
+  }
+
+  100% {
+    translate: 0.08vw 0.12vw;
+    rotate: 0.8deg;
+  }
+}
+
+.infoPoint {
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* круг с цифрой */
+.pointCircle {
+  width: 3vw;
+  height: 3vw;
+
+  border-radius: 50%;
+  background-color: #e8fca3;
+  color: #101010;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "FATResin";
+  font-size: 2vw;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.infoPoint:hover .pointCircle {
+  transform: scale(1.15);
+  background-color: #fcfcfc;
+}
+
+/* линия */
+.pointLine {
+  position: absolute;
+  left: 3vw;
+  top: 1.45vw;
+
+  width: 6vw;
+  height: 0.12vw;
+
+  background-color: #e8fca3;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.25s ease;
+}
+
+.infoPoint:hover .pointLine {
+  transform: scaleX(1);
+}
+
+/* карточка */
+.pointCard {
+  position: absolute;
+  left: 9vw;
+  top: -1vw;
+
+  width: 18vw;
+
+  padding: 1vw;
+
+  background-color: #101010;
+  border: 0.12vw dashed #747474;
+
+  opacity: 0;
+  transform: translateX(-1vw);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease 0.15s,
+    transform 0.25s ease 0.15s;
+}
+
+.infoPoint:hover .pointCard {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pointTitle {
+  font-family: "FATResin";
+  font-size: 2vw;
+  line-height: 85%;
+  color: #e8fca3;
+
+  margin: 0 0 0.7vw 0;
+}
+
+.pointText {
+  font-size: 1.1vw;
+  line-height: 110%;
+  color: #fcfcfc;
+
+  margin: 0;
+}
+
+#pointPlate {
+  left: 29vw;
+  top: 21vw;
+}
+
+#pointRoad {
+  left: 45vw;
+  top: 8vw;
+}
+
+#pointMicrowave {
+  left: 67vw;
+  top: 20vw;
+}
+
+#pointCoffee {
+  left: 36vw;
+  top: 38vw;
+}
+
+#pointTable {
+  left: 66vw;
+  top: 30vw;
 }
