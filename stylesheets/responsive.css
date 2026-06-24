@@ -1,4 +1,4 @@
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 414px) {
   html,
   body {
     width: 100%;
@@ -19,7 +19,10 @@
   .poster,
   .posterBig,
   .sectionTitle,
-  .hugeText {
+  .hugeText,
+  .scrollArrow,
+  #arrowUnderScroll,
+  #scroll {
     display: none;
   }
 
@@ -33,7 +36,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 74px;
+    height: 17.9vw;
     margin: 0;
     padding: 0;
     pointer-events: auto;
@@ -49,13 +52,13 @@
 
   .mobileBurger {
     position: fixed;
-    top: 24px;
-    right: 24px;
+    top: 5.8vw;
+    right: 5.8vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 42px;
-    height: 30px;
+    width: 10vw;
+    height: 7.25vw;
     cursor: pointer;
     z-index: 100002;
   }
@@ -63,7 +66,7 @@
   .mobileBurger span {
     display: block;
     width: 100%;
-    height: 5px;
+    height: 1.2vw;
     background-color: #fcfcfc;
     transition:
       transform 0.3s ease,
@@ -77,10 +80,10 @@
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 4.8vw;
     width: 100vw;
     height: 100vh;
-    padding: 110px 28px 28px 28px;
+    padding: 26.6vw 6.76vw 6.76vw 6.76vw;
     background-color: #e8fca3;
     opacity: 0;
     pointer-events: none;
@@ -94,15 +97,15 @@
   .mainMenu .section {
     color: #101010;
     font-family: "FATResin";
-    font-size: 56px;
+    font-size: 13.5vw;
     line-height: 82%;
     text-decoration: none;
   }
 
   .mainMenu .mainButtonBg {
     position: fixed;
-    left: 28px;
-    bottom: 34px;
+    left: 6.76vw;
+    bottom: 8.2vw;
     display: flex;
     opacity: 0;
     pointer-events: none;
@@ -115,10 +118,10 @@
 
   .mainMenu .mainButton {
     display: flex;
-    padding: 10px 14px;
-    color: #fcfcfc;
-    background-color: #101010;
-    font-size: 16px;
+    padding: 2.4vw 3.38vw;
+    color: #101010;
+    background-color: #e8fca3;
+    font-size: 3.86vw;
     text-decoration: none;
   }
 
@@ -147,8 +150,8 @@
     position: relative;
     display: block;
     width: 100vw;
-    height: 850px;
-    margin: 74px 0 0 0;
+    height: 270vw;
+    margin-top: 17.9vw;
     overflow: hidden;
   }
 
@@ -159,60 +162,35 @@
   }
 
   #motherPlate {
-    width: 78vw;
+    width: 100vw;
     left: 50%;
-    top: -18px;
+    top: 2vw;
     transform: translateX(-58%);
     z-index: 4;
   }
 
   #runningRoad {
-    width: 82vw;
+    width: 120vw;
     left: 50%;
-    top: 125px;
+    top: 45vw;
     transform: translateX(-37%);
     z-index: 3;
   }
 
   #table {
-    width: 76vw;
-    left: 50%;
-    top: 445px;
+    width: 125vw;
+    left: 80vw;
+    top: 130vw;
     transform: translateX(-62%);
     z-index: 3;
   }
 
   #microwave {
-    width: 72vw;
-    left: 50%;
-    top: 520px;
+    width: 120vw;
+    left: 30vw;
+    top: 180vw;
     transform: translateX(-30%);
     z-index: 4;
-  }
-
-  .scrollArrow {
-    position: absolute;
-    left: 50%;
-    top: 350px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0;
-    transform: translateX(-50%);
-    z-index: 20;
-  }
-
-  #scroll {
-    margin: 0;
-    color: #fcfcfc;
-    font-size: 76px;
-    line-height: 78%;
-    text-align: center;
-  }
-
-  #arrowUnderScroll {
-    width: auto;
-    height: 68px;
   }
 
   .infoPoint {
@@ -221,41 +199,35 @@
   }
 
   .pointCircle {
-    width: 58px;
-    height: 58px;
+    width: 14vw;
+    height: 14vw;
     color: #101010;
     background-color: #e8fca3;
-    font-size: 34px;
-  }
-
-  .pointLine,
-  .pointCard {
-    display: none;
+    font-size: 8.2vw;
   }
 
   #pointPlate {
-    left: 59vw;
-    top: 0;
+    left: 10vw;
+    top: 1vw;
   }
 
   #pointRoad {
-    left: 55vw;
-    top: 145px;
+    left: 10vw;
+    top: 60vw;
   }
 
   #pointTable {
-    left: 17vw;
-    top: 415px;
+    left: 10vw;
+    top: 120vw;
   }
 
   #pointMicrowave {
-    left: 70vw;
-    top: 545px;
+    left: 10vw;
+    top: 190vw;
   }
 
   .halftone {
-    margin: 0;
-    padding: 0 22px;
+    margin-left: 5.5vw;
   }
 
   .mainHalftone {
@@ -266,12 +238,25 @@
 
   #halftoneText {
     order: 1;
-    margin: 0 0 26px 0;
+    margin-bottom: 6.3vw;
     color: #fcfcfc;
-    font-size: 33px;
-    letter-spacing: -1px;
+    font-size: 14.5vw;
+    letter-spacing: -1%;
     line-height: 82%;
     white-space: normal;
+  }
+
+  .pointCard {
+    width: 65vw;
+    height: 30vw;
+  }
+
+  .pointTitle {
+    font-size: 17vw;
+  }
+
+  .pointText {
+    font-size: 4.1vw;
   }
 
   .mobileGameButton {
@@ -279,94 +264,99 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 112px;
-    height: 30px;
-    margin: 0 auto 26px auto;
+    width: 27vw;
+    height: 7.25vw;
+    margin: 0 auto 6.3vw auto;
     color: #101010;
     background-color: #e8fca3;
-    font-size: 13px;
+    font-size: 3.14vw;
     text-decoration: none;
   }
 
   #mainLocation {
     order: 3;
     display: block;
-    width: calc(100vw - 44px);
+    width: 89.4vw;
     height: 520px;
-    margin: 0;
+    margin-top: -17vw;
   }
 
   #halftone {
     order: 4;
     display: block;
-    width: calc(100vw - 44px);
-    height: 250px;
-    margin: 8px 0 0 0;
+    width: 89.4vw;
+    height: 60.4vw;
+    margin-top: -18vw;
+    margin-left: 0;
   }
 
   body > section.posters {
     position: relative;
     display: block;
     width: 100vw;
-    height: 760px;
-    margin: 76px 0 0 0;
+    height: 183.6vw;
+    margin-top: 18.36vw;
     overflow: hidden;
   }
 
   #oblet {
     width: 100vw;
-    height: 760px;
-    margin: 0;
+    height: 183.6vw;
     object-fit: cover;
     filter: grayscale(100%);
   }
 
   .videoText {
     color: #e8fca3;
-    font-size: 15px;
+    font-size: 7vw;
     font-weight: 600;
     z-index: 10;
   }
 
   #videoTitle {
     position: absolute;
-    top: 50px;
-    right: 20px;
+    top: 5vw;
+    right: 4.8vw;
     left: auto;
   }
 
   #videoTime {
     position: absolute;
     top: auto;
-    left: 22px;
-    bottom: 65px;
+    left: 5.3vw;
+    top: 172vw;
   }
 
   #logo {
-    width: 70vw;
-    top: 300px;
-    left: 15vw;
+    width: 85vw;
+    top: 72.5vw;
+    left: 7vw;
     z-index: 8;
   }
 
   #logoOld {
-    width: 95vw;
-    top: 240px;
-    left: 2vw;
+    width: 110vw;
+    top: 58vw;
+    left: -6vw;
     z-index: 8;
   }
 
+  #finalCherry {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+
   #slotsAndBoltsVideo {
-    top: 305px;
-    left: 16vw;
-    font-size: 28vw;
+    top: 65vw;
+    left: 21vw;
+    font-size: 45vw;
     z-index: 8;
   }
 
   #finalTitle {
-    margin: 230px 20px 0 20px;
+    margin-top: 2vw;
     color: #fcfcfc;
-    font-size: 56px;
+    font-size: 20vw;
     line-height: 80%;
     text-align: center;
   }
@@ -374,42 +364,421 @@
   #finalButton {
     width: fit-content;
     max-width: fit-content;
-    margin: 30px auto 0 auto;
-    padding: 10px 14px;
+    margin: 10vw auto 20vw auto;
+    padding: 2.4vw 3.38vw;
     color: #101010;
     background-color: #fcfcfc;
-    font-size: 17px;
+    font-size: 7vw;
   }
 
   .orderModal {
     width: 86vw;
     min-width: 0;
-    padding: 24px 18px;
-    border-width: 1px;
+    padding: 5.8vw 4.35vw;
+    border-width: 0.24vw;
   }
 
   .orderClose {
-    right: 12px;
-    top: 8px;
-    font-size: 28px;
+    right: 3vw;
+    top: 1.93vw;
+    font-size: 6.76vw;
   }
 
   .orderTitle {
-    font-size: 36px;
+    font-size: 8.7vw;
   }
 
   .orderProduct {
-    font-size: 22px;
+    font-size: 5.3vw;
   }
 
   .orderInput {
-    padding: 12px;
-    border-width: 1px;
-    font-size: 16px;
+    padding: 3vw;
+    border-width: 0.24vw;
+    font-size: 3.9vw;
   }
 
   .orderSubmit {
-    padding: 12px;
-    font-size: 16px;
+    padding: 3vw;
+    font-size: 3.9vw;
+  }
+}
+
+/* мерч!!!!!!! */
+
+@media screen and (max-width: 414px) {
+  .ruletkaWrapper {
+    width: 100vw;
+    overflow: visible;
+    padding: 26.6vw 5.3vw 0 5.3vw;
+  }
+
+  .ruletka {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 17.4vw;
+    background-image: none;
+    animation: none;
+    overflow: visible;
+  }
+
+  .ruletkaGroup,
+  .ruletkaGroupClone {
+    display: contents;
+  }
+
+  .buy {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .ruletka .buy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ruletka .buy img {
+    margin: 0;
+    display: block;
+    transform: none;
+  }
+
+  #notebook {
+    width: 86vw;
+    margin-left: 0;
+  }
+
+  #avtomat {
+    width: 48vw;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #kanistra {
+    width: 62vw;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #bag {
+    width: 92vw;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  #notebook:hover,
+  #avtomat:hover,
+  #kanistra:hover,
+  #bag:hover {
+    transform: none;
+  }
+
+  .buyText {
+    width: 92vw;
+    min-width: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2.9vw;
+    margin-top: 4.35vw;
+  }
+
+  #buyNotebook,
+  #buyAvtomat,
+  #buyKanistra,
+  #buyBag {
+    width: 92vw;
+    min-width: 0;
+    margin-left: -10vw;
+    margin-top: 4.35vw;
+    gap: 0;
+  }
+
+  .buyTitle,
+  .buyPrice {
+    width: auto;
+    min-width: 0;
+    font-size: 9.2vw;
+    line-height: 82%;
+    white-space: normal;
+  }
+
+  .buyTitle {
+    max-width: 62%;
+  }
+
+  .buyPrice {
+    max-width: 38%;
+    padding-right: 0;
+    text-align: right;
+  }
+
+  .buyButton {
+    width: 91vw;
+    min-width: 0;
+    margin-top: 4.35vw;
+    margin-left: -10vw;
+    padding: 3.14vw 0;
+    border-width: 0.24vw;
+    font-size: 3.87vw;
+  }
+
+  .buyButton:hover {
+    border-width: 0.24vw;
+  }
+
+  .footer,
+  #shopFooter {
+    display: none;
+  }
+
+  .orderOverlay {
+    padding: 4.8vw;
+  }
+
+  .orderModal {
+    width: 100%;
+    min-width: 0;
+    padding: 6.76vw 4.3vw 4.8vw 4.3vw;
+    border-width: 0.24vw;
+  }
+
+  .orderClose {
+    top: 1.9vw;
+    right: 3.38vw;
+    font-size: 8.2vw;
+  }
+
+  .orderTitle {
+    font-size: 10.1vw;
+    line-height: 82%;
+    margin-bottom: 2.9vw;
+  }
+
+  .orderProduct {
+    font-size: 6.3vw;
+    line-height: 85%;
+    margin-bottom: 5.8vw;
+  }
+
+  .orderForm {
+    gap: 2.9vw;
+  }
+
+  .orderInput {
+    padding: 3.14vw 2.9vw;
+    border-width: 0.24vw;
+    font-size: 3.8vw;
+  }
+
+  .orderSubmit {
+    margin-top: 1.9vw;
+    padding: 3.38vw 2.9vw;
+    font-size: 3.86vw;
+  }
+}
+
+/* локацияяяяяя */
+
+@media screen and (max-width: 414px) {
+  .locationScheme {
+    position: relative;
+    display: block;
+    width: 89.4vw;
+    margin: 26vw 5.3vw 0 5.3vw;
+    overflow: visible;
+  }
+
+  #scheme {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .schemePoint {
+    position: absolute;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  .greenScheme {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .schemePoint:hover .greenScheme,
+  .schemePoint.active .greenScheme,
+  #greenMain.active .greenScheme,
+  #greenTVs.active #greenSchemeTVs,
+  #greenProvods.active #greenSchemeProvods,
+  #greenTonnels.active #greenSchemeTonnels {
+    opacity: 1;
+  }
+
+  #greenMain {
+    width: 20.2vw;
+    left: 33.3vw;
+    top: 20.3vw;
+  }
+
+  #greenTVs {
+    width: 8.3vw;
+    left: 81vw;
+    top: 30.5vw;
+  }
+
+  #greenProvods {
+    width: 11.8vw;
+    left: 4.7vw;
+    top: 13vw;
+  }
+
+  #greenTonnels {
+    width: 6.1vw;
+    left: 43.5vw;
+    top: 0;
+  }
+
+  .schemeInfo,
+  .schemeLine,
+  .photoBox {
+    display: none;
+  }
+
+  .locationInfo {
+    position: relative;
+    width: 80vw;
+    height: auto;
+    min-height: 50vw;
+    margin-left: -1vw;
+    margin-top: 5vw;
+    padding: 5.3vw;
+    border: 0.24vw dashed #fcfcfc;
+    background-color: #101010;
+  }
+
+  #locationInfoTitle {
+    position: static;
+    margin: 0;
+    color: #fcfcfc;
+    font-size: 13vw;
+    line-height: 82%;
+    white-space: normal;
+  }
+
+  #locationInfoText {
+    position: static;
+    margin-top: 4.35vw;
+    color: #fcfcfc;
+    font-size: 4.1vw;
+    line-height: 110%;
+  }
+
+  .locationInfoImage {
+    position: static;
+    display: block;
+    width: 90.5vw;
+    margin-top: 10vw;
+    margin-left: -5.3vw;
+  }
+
+  #locationFooter,
+  .footer {
+    display: none;
+  }
+}
+
+/* постерыыыыыы */
+
+@media screen and (max-width: 430px) {
+  .postersMain {
+    display: block;
+    height: auto;
+    margin-top: 17.9vw;
+  }
+
+  .postersMain .posters {
+    position: relative;
+    width: 100vw;
+    height: 296vw;
+    margin: 0;
+  }
+
+  .postersMain .posterBig {
+    position: relative;
+    opacity: 1 !important;
+  }
+
+  .postersMain .posterInfo {
+    position: absolute !important;
+    left: 5.3vw;
+    right: 5.3vw;
+    width: auto;
+    top: 45vw;
+  }
+
+  .posterInfoTitle {
+    margin-top: 90vw;
+    color: #e8fca3;
+    font-family: "FATResin";
+    font-size: 14vw;
+  }
+
+  .posterInfoText {
+    margin-top: 4.35vw;
+    color: #fcfcfc;
+    font-size: 3.86vw;
+    line-height: 110%;
+  }
+
+  .posterInfoDate {
+    margin-top: 5.8vw;
+    color: #e8fca3;
+    font-family: "FATResin";
+    font-size: 18.36vw;
+  }
+
+  .posterInfoButton {
+    margin-top: 4.35vw;
+    padding: 3.14vw 0;
+    border: 0.24vw dashed #fcfcfc;
+    color: #fcfcfc;
+    font-size: 3.86vw;
+  }
+
+  .postersMain .posters > img:nth-of-type(3) {
+    object-fit: contain;
+  }
+
+  .posters.is-row-moving-next,
+  .posters.is-row-moving-prev,
+  .posterInfo.is-text-flying,
+  .posterInfo.is-text-flying .posterInfoTitle,
+  .posterInfo.is-text-flying .posterInfoText,
+  .posterInfo.is-text-flying .posterInfoDate,
+  .posterInfo.is-text-flying .posterInfoButton {
+    animation: none;
+  }
+
+  #footerEvents,
+  .footer {
+    display: none;
+  }
+
+  .postersMain .posters > img:nth-of-type(2) {
+    display: block !important;
+    position: absolute;
+    left: 5.3vw;
+    width: 90vw;
+    height: auto;
   }
 }
