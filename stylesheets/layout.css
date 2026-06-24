@@ -1787,3 +1787,12 @@ body.modalOpen {
 .mobileGameButton {
   display: none;
 }
+
+html,
+body,
+a,
+button {
+  cursor:
+    url("../svg/cursor.svg") 16 16,
+    auto;
+}
