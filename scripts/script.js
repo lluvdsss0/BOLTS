@@ -319,3 +319,20 @@ window.addEventListener("load", () => {
 
   moveCherries();
 });
+
+const mobileBurger = document.querySelector(".mobileBurger");
+const mainMenu = document.querySelector(".mainMenu");
+
+if (mobileBurger && mainMenu) {
+  mobileBurger.addEventListener("click", () => {
+    mainMenu.classList.toggle("menuOpen");
+  });
+
+  const mobileMenuLinks = mainMenu.querySelectorAll(".section, .mainButton");
+
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mainMenu.classList.remove("menuOpen");
+    });
+  });
+}
